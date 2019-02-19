@@ -12,22 +12,29 @@ Galaxy Note3(SM-N900K) AOSP build
     > git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7
 ## Docker Build
 * Inspired from https://github.com/gmacario/easy-build/blob/master/build-aosp/Dockerfile
-* **Caution**
+### Caution
 If native filesystem of Mac OS is used for source volume mount,
+
 it will makes build error by overwritten case sensitive files in netfilter.
 ### Build Docker Image
     > ./build.sh
 ### Run Docker Image
     > ./run.sh
 ### Build Galaxy Note3 AOSP in Docker Container
-* Kernel Build
+#### Kernel Build
     > mkdir /home/build/kernel_in_container
+    
     > cd /home/build/kernel_in_container
+    
     > tar xvzf /home/build/note3-src/Kernel.tar.gz
+    
     > cp -f /home/build/patches/build_kernel.sh_ktt_defconfig build_kernel.sh
+    
     > cp -f /home/build/patches/timeconst.pl_patch kernel/timeconst.pl
+    
     > ./build_kernel.sh
-* Platform Build
+
+#### Platform Build
     > Not yet tested
 ## License
 * GPLv2
