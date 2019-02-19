@@ -3,9 +3,12 @@ Galaxy Note3(SM-N900K) AOSP build
 
 ## Kernel And Platform
 * Android5.0
-    > SM-N900S_LL_Opensource.zip got from in https://opensource.samsung.com
+    > SM-N900S_LL_Opensource.zip got from https://opensource.samsung.com
 ## Toolchain
-* arm-eabi-4.7 (Currently added with submodule)
+* Use arm-eabi-4.7 by build guide
+* submodule update
+    > git submodule update --init
+* Or manual git clone
     > git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7
 ## Docker Build
 * Inspired from https://github.com/gmacario/easy-build/blob/master/build-aosp/Dockerfile
@@ -25,7 +28,6 @@ it will makes build error by overwritten case sensitive files in netfilter.
     > cp -f /home/build/patches/timeconst.pl_patch kernel/timeconst.pl
     > ./build_kernel.sh
 * Platform Build
-
     > Not yet tested
 ## License
 * GPLv2
